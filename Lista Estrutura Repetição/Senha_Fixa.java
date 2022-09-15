@@ -1,5 +1,4 @@
-package lista3;
-
+import java.util.Locale;
 import java.util.Scanner;
 
 /* Escreva um programa que repita a leitura de uma senha até que ela seja válida. Para
@@ -10,20 +9,18 @@ mensagem "Acesso Permitido" e o algoritmo encerrado. Considere que a senha corre
 */
 
 public class Senha_Fixa {
-
     public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        int senha = 0;
-
+        System.out.println("Digite a senha: ");
+        int senha = sc.nextInt();
         while (senha != 2002) {
+            System.out.println("Senha inválida! Tente novamente: ");
             senha = sc.nextInt();
-            if (senha != 2002) {
-                System.out.println("Senha Invalida! Tente novamente: ");
-            } else {
-                System.out.println("Acesso Permitido");
-            }
         }
-        sc.close();
+        System.out.println("Acesso Permitido!");
 
+        sc.close();
     }
+
 }
